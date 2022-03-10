@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-    likedPostsId.push(id); //its push
+    likedPostsId.push(id); //its push problem solved
     showPosts(posts);
 };
 
@@ -33,19 +33,24 @@ const displayContent = (text) => {
 
 const switchTab = (id) => {
     if (id === "posts") {
+      document.getElementById("bonus").style.display="block";
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
     } else if (id === "liked") {
+      document.getElementById("bonus").style.display="none";
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        
 
         displayLikedPosts();
     } else {
+      document.getElementById("bonus").style.display="none";
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
+        
 
         displayReportedPosts();
     }
